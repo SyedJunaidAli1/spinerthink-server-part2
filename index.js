@@ -13,6 +13,10 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT;
 
+import uploadRoutes from "./routes/upload.js";
+
+app.use("/upload", uploadRoutes);
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
