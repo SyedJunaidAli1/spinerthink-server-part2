@@ -14,7 +14,11 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT;
 
 import uploadRoutes from "./routes/upload.js";
+import jobRoutes from "./routes/jobs.js";
+import resultRoutes from "./routes/results.js";
 
+app.use("/jobs", jobRoutes);
+app.use("/results", resultRoutes);
 app.use("/upload", uploadRoutes);
 
 app.listen(PORT, () => {
